@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        {% block head %}
+            <title>School</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/">Teachers</a>
+                <a href="/students">Students</a>
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        <div id="links-footer" class="links">
+            <a href="https://github.com/rodrigoabam" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/rodrigo-barbosa-474ab9187/" target="_blank">Linkedin</a>
+        </div>
+     
+    </body>
+</html>

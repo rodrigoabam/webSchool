@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('./data.json')
-const { age } = require('./dataPro')
+const { age, graduation } = require('./dataPro')
 
 //create
 exports.post = function(req, res){
@@ -49,6 +49,7 @@ exports.show = function(req, res){
         ...foundTeacher,
         matters: foundTeacher.matters.split(","),
         birth: age(foundTeacher.birth),
+        scholarity: graduation(foundTeacher.scholarity)
     }
 
     return res.render("teachers/profile", { teacher })

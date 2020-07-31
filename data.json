@@ -7,7 +7,7 @@
       "birth": 667526400000,
       "scholarity": "es",
       "type_class": "D",
-      "matter": "Lógica"
+      "matters": "Lógica"
     },
     {
       "id": 2,
@@ -16,7 +16,16 @@
       "birth": 651628800000,
       "scholarity": "mm",
       "type_class": "P",
-      "matter": "Física"
+      "matters": "Física, Inglês"
+    },
+    {
+      "id": 3,
+      "photo": "https://www.estudiosite.com.br/img/post/nxniEwbm548GZWI4Wsro5b2d0c6d87d4e.jpg",
+      "name": "Elton",
+      "birth": 326764800000,
+      "scholarity": "mm",
+      "type_class": "D",
+      "matters": "Lógica, Algoritmo, Matemática"
     }
   ]
 }

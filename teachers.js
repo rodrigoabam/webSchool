@@ -1,5 +1,6 @@
 const fs = require('fs')
-const data = require("./data.json")
+const data = require('./data.json')
+const { age } = require('./dataPro')
 
 //create
 exports.post = function(req, res){
@@ -11,7 +12,7 @@ exports.post = function(req, res){
         }
     }
 
-    let { photo, name, birth, scholarity, type_class, matter } = req.body
+    let { photo, name, birth, scholarity, type_class, matters } = req.body
 
     birth = Date.parse(birth)
     const id = Number(data.teachers.length + 1)
@@ -23,13 +24,32 @@ exports.post = function(req, res){
         birth,
         scholarity,
         type_class,
-        matter
+        matters
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if(err) return res.send("Erro na escrita")
 
-        return res.redirect("teachers")
+        return res.redirect(`/teachers/${id}`)
     })
 
+}
+
+//show
+exports.show = function(req, res){
+    const { id } = req.params
+
+    const foundTeacher = data.teachers.find(function(teacher){
+        return id == teacher.id
+    })
+
+    if(!foundTeacher) return res.send("Professor não encontrado.")
+
+    const teacher = {
+        ...foundTeacher,
+        matters: foundTeacher.matters.split(","),
+        birth: age(foundTeacher.birth),
+    }
+
+    return res.render("teachers/profile", { teacher })
 }

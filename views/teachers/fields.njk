@@ -1,0 +1,49 @@
+<div class="item">
+    <input type="url" name="photo" value="{{ teacher.photo }}" required>
+    <label>Foto</label>
+</div>
+<div class="item">
+    <input type="text" name="name" value="{{ teacher.name }}" required>
+    <label>Nome</label>
+</div>
+
+<div class="item">
+    <div>Data de nascimento</div>
+        <div>
+            <input type="date" name="birth" value="{{ teacher.birth }}">
+        </div>
+    </div>
+    <div class="item">
+        <div>Grau de escolaridade</div>
+    <div>
+        <select name="scholarity">
+            <option value="medio" selected>Ensino Médio Completo</option>
+            <option value="superior">Ensino Superior Completo</option>
+            <option value="mestre">Mestrado</option>
+            <option value="doutor">Doutorado</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Modelo de aula</div>
+    <div>
+        <span><input type="radio" name="type_class" value="P" 
+        {% if teacher.type_class == "P" %} 
+        checked
+        {% endif %}
+        >Presencial</span>
+        <span><input type="radio" name="type_class" value="D"
+        {% if teacher.type_class == "D" %} 
+        checked
+        {% endif %}
+        >EAD (distancia)</span>
+    </div>
+</div>
+
+<div class="item">
+    <input type="text" name="matters" value="{{ teacher.matters }}" required>
+    <label>Matérias ministradas</label>
+</div>
+
+<button type="submit">Cadastrar</button>

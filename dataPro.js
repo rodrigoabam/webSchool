@@ -20,5 +20,14 @@ module.exports = {
         if(scholarity == "mestre") return graduation = "Mestrado"
         if(scholarity == "doutor") return graduation = "Doutorado"
 
+    },
+    date: function(timestamp){
+        const date = new Date(timestamp)
+
+        const y = date.getFullYear()
+        const m = `0${date.getUTCMonth()+1}`.slice(-2)
+        const d = `0${date.getUTCDate()}`.slice(-2)
+
+        return `${y}-${m}-${d}`
     }
 }

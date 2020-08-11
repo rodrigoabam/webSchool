@@ -22,6 +22,6 @@ Nessa etapa deve ser criado um formulário de cadastro do professor e uma rota d
  ## 🎥 Preview:
 
 <h1>
-    <img src="public/assets/preview1.gif">
+    <img src="public/assets/img-git/preview1.gif">
 </h1>
 

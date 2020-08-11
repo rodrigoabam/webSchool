@@ -18,7 +18,7 @@ a {
     text-decoration: none;
 }
 
-body {
+html, body {
     background-color: var(--color-three);
     font-family: 'Varta', sans-serif;
 }
@@ -283,3 +283,41 @@ button:hover {
     background-color: var(--color-two);
     color: var(--color-four);
 }
+
+
+@media (max-width: 700px) {
+    div.card {
+       width: 80%;
+
+        grid-template-rows: 1fr 3fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "img"
+        "form";
+    }
+
+    section.foto {
+       grid-area: img;
+    }
+
+    section.ficha {
+        grid-area: form;
+    }
+
+    div.item span {
+        margin-bottom: 8px;
+    }
+
+    form.card {
+        width: 80%;
+ 
+         grid-template-rows: 1fr 3fr;
+         grid-template-columns: 1fr;
+         grid-template-areas: "img"
+         "form";
+     }
+
+
+}
+
+
+

@@ -1,22 +1,13 @@
 {
   "teachers": [
     {
-      "id": 1,
+      "id": "1",
       "photo": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fneuroconecte.com%2Fartigo-competencia-socioemocional-do-professor-impactos%2F&psig=AOvVaw1EapEtxyGPxGenlUdG6bBg&ust=1595822800989000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOj0vayF6uoCFQAAAAAdAAAAABAD",
       "name": "Amanda Souza",
       "birth": 667526400000,
-      "scholarity": "superior",
+      "scholarity": "medio",
       "type_class": "D",
       "matters": "Lógica"
-    },
-    {
-      "id": 2,
-      "photo": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.grancursosonline.com.br%2Fsaiu-edital-para-professor-infantil-do-rio-de-janeiro-oferta-de-110-vagas-e-inicial-de-r-4-mil%2F&psig=AOvVaw2ONwr1I5evGZ6R7Qs-EU0H&ust=1595823885572000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD6kLGJ6uoCFQAAAAAdAAAAABAO",
-      "name": "João",
-      "birth": 651628800000,
-      "scholarity": "mestre",
-      "type_class": "P",
-      "matters": "Física, Inglês"
     },
     {
       "id": 3,

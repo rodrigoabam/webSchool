@@ -2,6 +2,11 @@ const fs = require('fs')
 const data = require('./data.json')
 const { age, graduation, date } = require('./dataPro')
 
+
+exports.index = function(req, res){
+    return res.render('teachers/index', { teachers: data.teachers })
+}
+
 //create
 exports.post = function(req, res){
     const keys = Object.keys(req.body)
@@ -91,7 +96,8 @@ exports.put = function(req, res){
     const teacher = {
         ...foundTeacher,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
     data.teachers[index] = teacher

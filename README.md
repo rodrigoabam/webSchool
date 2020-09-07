@@ -1,27 +1,24 @@
 # 🚀 Projeto da [Rocketseat](https://rocketseat.com.br/) - Turma LaunchBase 2020
 
-## 🏋️‍ [Desafio 4-3](https://github.com/Rocketseat/bootcamp-launchbase-desafios-04/blob/master/desafios/04-3-form-and-routes-teacher.md): Formulário e Rota de cadastro do Professor
+## 🏋️‍ [Desafio 4-6](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-04/blob/master/desafios/04-6-list-teachers.md): Listagem de professores
 
 ---
 
 ## 🎯 O desafio teve como objetivo fortalecer os conceitos:
- - Receber dados do Front-end com req.body;
- - Validar dados no Back end;
- - Node fs;
- - Callback function;
- - Dados JSON;
- - Estrutura de dados;
+ - Criação de rota;
+ - Trabalhar com Table;
+ - Passar dados do data.json para front-end;
 
  ---
 
 ## 📑 Descrição do desafio:
-Nessa etapa deve ser criado um formulário de cadastro do professor e uma rota do tipo post que irá realizar as validações e salvar os dados enviados. 
+Nessa etapa o desafio foi, reformular o index, passando os dados json para a página index em formato de tabela.
 
  ---
 
  ## 🎥 Preview:
 
 <h1>
-    <img src="public/assets/img-git/preview1.gif">
+    <img src="public/assets/img-git/preview4-6.png">
 </h1>
 

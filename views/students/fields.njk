@@ -13,12 +13,12 @@
 
 <div class="item">
     <div>Data de nascimento</div>
-        <div>
-            <input type="date" name="birth" value="{{ student.birth }}">
-        </div>
+    <div>
+        <input type="date" name="birth" value="{{ student.birth }}">
     </div>
-    <div class="item">
-        <div>Ano escolar</div>
+</div>
+<div class="item">
+    <div>Ano escolar</div>
     <div>
         <select name="grade">
             <option value="EF5" selected>5º E.Fundamental</option>
@@ -30,6 +30,12 @@
             <option value="EM2">2º E.Médio</option>
             <option value="EM3">3º E.Médio</option>
         </select>
+    </div>
+</div>
+<div class="item">
+    <div>Carga horária</div>
+    <div>
+        <input type="number" name="workload" value="{{ student.workload }}">
     </div>
 </div>
 

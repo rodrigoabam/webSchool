@@ -21,6 +21,19 @@ module.exports = {
         if(scholarity == "doutor") return graduation = "Doutorado"
 
     },
+    schoolYear: function(grade){
+        let schoolYear
+
+        if(grade == "EF5") return schoolYear = "5º E.Fundamental"
+        if(grade == "EF6") return schoolYear = "6º E.Fundamental"
+        if(grade == "EF7") return schoolYear = "7º E.Fundamental"
+        if(grade == "EF8") return schoolYear = "8º E.Fundamental"
+        if(grade == "EF9") return schoolYear = "9º E.Fundamental"
+        if(grade == "EM1") return schoolYear = "1º E.Médio"
+        if(grade == "EM2") return schoolYear = "2º E.Médio"
+        if(grade == "EM3") return schoolYear = "3º E.Médio"
+
+    },
     date: function(timestamp){
         const date = new Date(timestamp)
 

@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age } = require('../dataPro')
+const { age, date, schoolYear } = require('../dataPro')
 
 
 exports.index = function(req, res){
@@ -54,7 +54,7 @@ exports.edit = function(req, res){
 
     const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth)
+        birth: date(foundStudent.birth),
     }
 
     return res.render('students/edit', {student})
@@ -72,6 +72,7 @@ exports.show = function(req, res){
     const student = {
         ...foundStudent,
         birth: age(foundStudent.birth),
+        grade: schoolYear(foundStudent.grade),
     }
 
     return res.render("students/profile", { student })
@@ -95,7 +96,7 @@ exports.put = function(req, res){
         ...foundStudent,
         ...req.body,
         birth: Date.parse(req.body.birth),
-        id: Number(req.body.id)
+        id: Number(req.body.id),
     }
 
     data.students[index] = student

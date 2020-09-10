@@ -200,6 +200,11 @@ label {
     color: black;
 }
 
+input[type="number"] > label {
+    font-size: 16px;
+    color: white;
+}
+
 input[type="radio"] {
     cursor: pointer;
 }
@@ -247,7 +252,7 @@ input[type="date"] {
     border-radius: 4px;
 }
 
-select {
+select, input[type="number"] {
     padding: 6px;
     border-radius: 4px;
     -webkit-appearance: none;

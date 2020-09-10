@@ -12,24 +12,20 @@
             <div>{{ student.name }}</div>
         </div>
         <div class="item">
-            <div>Idade</div>
+            <div>E-mail</div>
+            <div>{{ student.email }}</div>
+        </div>
+        <div class="item">
+            <div>Aniversário</div>
             <div>{{ student.birth }}</div>
         </div>
         <div class="item">
-            <div>Grau de escolaridade</div>
-            <div>{{ student.scholarity }}</div>
+            <div>Ano escolar</div>
+            <div>{{ student.grade }}</div>
         </div>
         <div class="item">
-            <div>Modelo de aula</div>
-            <div>{{ "Distância" if student.type_class == "D" else "Presencial" }}</div>
-        </div>
-        <div class="item">
-            <div>Matérias ministradas</div>
-            <div>
-                {% for matter in student.matters %}
-                <span>{{ matter }}</span>
-                {% endfor %}
-            </div>
+            <div>Carga horária</div>
+            <div>{{ student.workload }} h</div>
         </div>
 
         <a href="/students/{{ student.id }}/edit" class="button">Editar</a>

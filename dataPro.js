@@ -37,10 +37,16 @@ module.exports = {
     date: function(timestamp){
         const date = new Date(timestamp)
 
-        const y = date.getFullYear()
+        const y = date.getUTCFullYear()
         const m = `0${date.getUTCMonth()+1}`.slice(-2)
         const d = `0${date.getUTCDate()}`.slice(-2)
 
-        return `${y}-${m}-${d}`
+        return {
+            d,
+            m,
+            y,
+            birthDay: `${d}/${m}`,
+            iso: `${y}-${m}-${d}`
+        }
     }
 }

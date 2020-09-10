@@ -21,14 +21,46 @@
     <div>Ano escolar</div>
     <div>
         <select name="grade">
-            <option value="EF5" selected>5º E.Fundamental</option>
-            <option value="EF6">6º E.Fundamental</option>
-            <option value="EF7">7º E.Fundamental</option>
-            <option value="EF8">8º E.Fundamental</option>
-            <option value="EF9">9º E.Fundamental</option>
-            <option value="EM1">1º E.Médio</option>
-            <option value="EM2">2º E.Médio</option>
-            <option value="EM3">3º E.Médio</option>
+            <option value="EF5" 
+            {% if student.grade == "EF5"%}
+            selected
+            {% endif %}
+            >5º E.Fundamental</option>
+            <option value="EF6"
+            {% if student.grade == "EF6"%}
+            selected
+            {% endif %}
+            >6º E.Fundamental</option>
+            <option value="EF7"
+            {% if student.grade == "EF7"%}
+            selected
+            {% endif %}
+            >7º E.Fundamental</option>
+            <option value="EF8"
+            {% if student.grade == "EF8"%}
+            selected
+            {% endif %}
+            >8º E.Fundamental</option>
+            <option value="EF9"
+            {% if student.grade == "EF9"%}
+            selected
+            {% endif %}
+            >9º E.Fundamental</option>
+            <option value="EM1"
+            {% if student.grade == "EM1"%}
+            selected
+            {% endif %}
+            >1º E.Médio</option>
+            <option value="EM2"
+            {% if student.grade == "EM2"%}
+            selected
+            {% endif %}
+            >2º E.Médio</option>
+            <option value="EM3"
+            {% if student.grade == "EM3"%}
+            selected
+            {% endif %}
+            >3º E.Médio</option>
         </select>
     </div>
 </div>

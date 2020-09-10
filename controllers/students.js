@@ -1,13 +1,13 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date, schoolYear } = require('../dataPro')
+const { age, schoolYear, date } = require('../dataPro')
 
 
 exports.index = function(req, res){
     return res.render('students/index', { students: data.students })
 }
 
-exports. create =function(req, res){
+exports. create = function(req, res){
     return res.render('students/create')
 }
 
@@ -54,7 +54,7 @@ exports.edit = function(req, res){
 
     const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth),
+        birth: date(foundStudent.birth).iso,
     }
 
     return res.render('students/edit', {student})
@@ -71,7 +71,7 @@ exports.show = function(req, res){
 
     const student = {
         ...foundStudent,
-        birth: age(foundStudent.birth),
+        birth: date(foundStudent.birth).birthDay,
         grade: schoolYear(foundStudent.grade),
     }
 
@@ -90,13 +90,13 @@ exports.put = function(req, res){
     })
     
 
-    if(!foundStudent) return res.send("Estudante não encontrado")
+    if(!foundStudent) return res.send("Professor não encontrado")
 
     const student = {
         ...foundStudent,
         ...req.body,
         birth: Date.parse(req.body.birth),
-        id: Number(req.body.id),
+        id: Number(req.body.id)
     }
 
     data.students[index] = student

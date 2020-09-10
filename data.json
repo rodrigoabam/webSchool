@@ -1,4 +1,14 @@
 {
+  "students": [
+    {
+      "id": 1,
+      "birth": "1991-02-26",
+      "photo": "https://images.unsplash.com/photo-1491308056676-205b7c9a7dc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60",
+      "name": "Rodrigo",
+      "email": "rodrigo.rodrigo@rodrigo.com",
+      "grade": "EF8"
+    }
+  ],
   "teachers": [
     {
       "id": 1,
@@ -8,15 +18,6 @@
       "scholarity": "medio",
       "type_class": "D",
       "matters": "Lógica"
-    },
-    {
-      "id": 3,
-      "photo": "https://www.estudiosite.com.br/img/post/nxniEwbm548GZWI4Wsro5b2d0c6d87d4e.jpg",
-      "name": "Elton",
-      "birth": 326764800000,
-      "scholarity": "medio",
-      "type_class": "D",
-      "matters": "Lógica, Algoritmo, Matemática"
     },
     {
       "id": 4,
@@ -29,12 +30,12 @@
     },
     {
       "id": 5,
-      "photo": "https://images.unsplash.com/photo-1525571453712-090270b8354f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-      "name": "Laura Lis",
-      "birth": 952646400000,
-      "scholarity": "superior",
+      "birth": "1995-02-01",
+      "photo": "https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "name": "Jaime",
+      "scholarity": "medio",
       "type_class": "P",
-      "matters": "Lógica"
+      "matters": "Física"
     }
   ]
 }

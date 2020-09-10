@@ -1,0 +1,38 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="card">
+    <section class="foto"
+    style="background: url({{ student.photo }}) no-repeat center center / cover"
+    ></section>
+    <section class="ficha">
+        <h2>Professor</h2>
+        <div class="item">
+            <div>Nome</div>
+            <div>{{ student.name }}</div>
+        </div>
+        <div class="item">
+            <div>Idade</div>
+            <div>{{ student.birth }}</div>
+        </div>
+        <div class="item">
+            <div>Grau de escolaridade</div>
+            <div>{{ student.scholarity }}</div>
+        </div>
+        <div class="item">
+            <div>Modelo de aula</div>
+            <div>{{ "Distância" if student.type_class == "D" else "Presencial" }}</div>
+        </div>
+        <div class="item">
+            <div>Matérias ministradas</div>
+            <div>
+                {% for matter in student.matters %}
+                <span>{{ matter }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
+    </section>
+</div>
+{% endblock %}

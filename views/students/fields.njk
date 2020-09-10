@@ -1,0 +1,36 @@
+<div class="item">
+    <input type="url" name="photo" value="{{ student.photo }}" required>
+    <label>Foto</label>
+</div>
+<div class="item">
+    <input type="text" name="name" value="{{ student.name }}" required>
+    <label>Nome</label>
+</div>
+<div class="item">
+    <input type="email" name="email" value="{{ student.email }}" required>
+    <label>E-mail</label>
+</div>
+
+<div class="item">
+    <div>Data de nascimento</div>
+        <div>
+            <input type="date" name="birth" value="{{ student.birth }}">
+        </div>
+    </div>
+    <div class="item">
+        <div>Ano escolar</div>
+    <div>
+        <select name="grade">
+            <option value="EF5" selected>5º E.Fundamental</option>
+            <option value="EF6">6º E.Fundamental</option>
+            <option value="EF7">7º E.Fundamental</option>
+            <option value="EF8">8º E.Fundamental</option>
+            <option value="EF9">9º E.Fundamental</option>
+            <option value="EM1">1º E.Médio</option>
+            <option value="EM2">2º E.Médio</option>
+            <option value="EM3">3º E.Médio</option>
+        </select>
+    </div>
+</div>
+
+<button type="submit">Salvar</button>

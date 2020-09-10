@@ -1,13 +1,16 @@
 const fs = require('fs')
-const data = require('./data.json')
-const { age, graduation, date } = require('./dataPro')
+const data = require('../data.json')
+const { age, graduation, date } = require('../dataPro')
 
 
 exports.index = function(req, res){
     return res.render('teachers/index', { teachers: data.teachers })
 }
 
-//create
+exports. create =function(req, res){
+    return res.render('teachers/create')
+}
+
 exports.post = function(req, res){
     const keys = Object.keys(req.body)
 
@@ -17,19 +20,19 @@ exports.post = function(req, res){
         }
     }
 
-    let { photo, name, birth, scholarity, type_class, matters } = req.body
+    birth = Date.parse(req.body.birth)
 
-    birth = Date.parse(birth)
-    const id = Number(data.teachers.length + 1)
+    let id = 1;
+    const lastTeacher = data.teachers[data.teachers.length -1]
+
+    if(lastTeacher) {
+        id = lastTeacher.id + 1
+    }
 
     data.teachers.push({
         id,
-        photo,
-        name,
         birth,
-        scholarity,
-        type_class,
-        matters
+        ...req.body
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
@@ -40,7 +43,6 @@ exports.post = function(req, res){
 
 }
 
-//edit
 exports.edit = function(req, res){
     const { id } = req.params
 
@@ -58,7 +60,6 @@ exports.edit = function(req, res){
     return res.render('teachers/edit', {teacher})
 }
 
-//show
 exports.show = function(req, res){
     const { id } = req.params
 
@@ -78,7 +79,6 @@ exports.show = function(req, res){
     return res.render("teachers/profile", { teacher })
 }
 
-//atualizar
 exports.put = function(req, res){
     const { id } = req.body
     let index = 0
@@ -109,7 +109,6 @@ exports.put = function(req, res){
     })
 }
 
-//delete
 exports.delete = function(req, res){
     const { id } = req.body
     

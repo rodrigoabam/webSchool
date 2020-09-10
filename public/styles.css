@@ -43,8 +43,14 @@ header {
     margin-left: 32px;
 }
 
-.links a.active {
-    font-weight: bold;
+.links a.active:after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-one);
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .links a:before {
@@ -198,7 +204,7 @@ input[type="radio"] {
     cursor: pointer;
 }
 
-input[type="text"],input[type="url"] {
+input[type="text"],input[type="url"],input[type="email"]  {
     width: 100%;
 
     padding: 6px;
@@ -210,7 +216,7 @@ input[type="text"],input[type="url"] {
     font-size: 1em;
 }
 
-input[type="text"] ~ label, input[type="url"] ~ label {
+input[type="text"] ~ label, input[type="url"] ~ label, input[type="email"] ~ label {
     position: absolute;
 
     color: var(--color-four);
@@ -227,7 +233,9 @@ input[type="text"] ~ label, input[type="url"] ~ label {
 input[type="text"]:focus ~ label,
 input[type="text"]:valid ~ label,
 input[type="url"]:focus ~ label,
-input[type="url"]:valid ~ label {
+input[type="url"]:valid ~ label,
+input[type="email"]:focus ~ label,
+input[type="email"]:valid ~ label {
     transform: translateY(-28px);
     font-size: 14px;
     letter-spacing: 0.1em;

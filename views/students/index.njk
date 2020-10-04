@@ -20,7 +20,7 @@
                     {{student.name}}
                 </td>
                 <td>{{student.email}}</td>
-                <td>{{student.grade}}</td>
+                <td>{{schoolYear(student.grade)}}</td>
                 <td><a href="/students/{{student.id}}">VER</a> </td>
             </tr>
             {% endfor %}

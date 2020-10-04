@@ -1,10 +1,12 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, schoolYear, date } = require('../dataPro')
+const { schoolYear, date } = require('../dataPro')
 
 
 exports.index = function(req, res){
-    return res.render('students/index', { students: data.students })
+    const students = data.students
+
+    return res.render('students/index', { students, schoolYear })
 }
 
 exports. create = function(req, res){

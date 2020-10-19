@@ -1,8 +1,15 @@
-const { age, graduation, date } = require('../../lib/dtProcessing')
+const Student = require('../models/Student')
+
+const { date, schoolYear } = require('../../lib/dtProcessing')
+
 
 module.exports = {
     index(req, res){
-        return res.render('students/index')
+
+        Student.all(function(students){
+            return res.render("students/index", {students, schoolYear})
+        })
+        
     },
     create(req, res){
         return res.render('students/create')
@@ -16,13 +23,29 @@ module.exports = {
             }
         }
 
-        return
-    },
-    edit(req, res){
-        return
+        Student.create(req.body, function(student){
+            return res.redirect(`/students/${student.id}`)
+        })
+
     },
     show(req, res){
-        return
+        Student.find(req.params.id, function(student){
+            if(!student) return res.send("Professor não encontrado!")
+
+            student.birth = date(student.birth).birthDay
+            student.grade = schoolYear(student.grade)
+
+            return res.render("students/profile", {student})
+        })
+    },
+    edit(req, res){
+        Student.find(req.params.id, function(student){
+            if(!student) return res.send("Professor não encontrado!")
+
+            student.birth = date(student.birth).iso
+
+            return res.render("students/edit", {student})
+        })
     },
     put(req, res){
         const keys = Object.keys(req.body)
@@ -33,9 +56,14 @@ module.exports = {
             }
         }
 
-        return
+        Student.update(req.body, function(){
+            return res.redirect(`/students/${req.body.id}`)
+        })
+        
     },
     delete(req, res){
-        return
+        Student.delete(req.body.id, function(){
+            return res.redirect(`/students`)
+        })
     },
 }

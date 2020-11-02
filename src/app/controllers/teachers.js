@@ -5,10 +5,17 @@ const { age, date, graduation } = require('../../lib/dtProcessing')
 
 module.exports = {
     index(req, res){
+        const { filter } = req.query
 
-        Teacher.all(function(teachers){
-            return res.render("teachers/index", {teachers})
-        })
+        if( filter ){
+            Teacher.findBy(filter, function(teachers){
+                return res.render("teachers/index", {teachers, filter})
+            })
+        } else {
+            Teacher.all(function(teachers){
+                return res.render("teachers/index", {teachers})
+            })
+        } 
         
     },
     create(req, res){

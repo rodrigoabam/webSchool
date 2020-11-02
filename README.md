@@ -1,6 +1,6 @@
 # 🚀 Projeto da [Rocketseat](https://rocketseat.com.br/) - Turma LaunchBase 2020
 
-## 🏋️‍ [Desafio 5-3](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-05/blob/master/desafios/05-3-relacionamentos-filtros-bd.md): Relacionamentos e filtros no BD 
+## 🏋️‍ [Desafio 5-4](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-05/blob/master/desafios/05-4-paginacao-bd.md): Paginação de resultados no BD
 
 ---
 

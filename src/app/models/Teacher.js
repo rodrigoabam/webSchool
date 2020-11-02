@@ -57,13 +57,13 @@ module.exports = {
   findBy(filter, callback){
 
     db.query(`
-    SELECT teachers.*, count(students) AS total_students
-    FROM teachers
-    LEFT JOIN students ON (students.teacher_id = teachers.id)
-    WHERE teachers.name  ILIKE '%${filter}%' OR
-    teachers.matters  ILIKE '%${filter}%'
-    GROUP BY teachers.id
-    ORDER BY total_students DESC
+      SELECT teachers.*, count(students) AS total_students
+      FROM teachers
+      LEFT JOIN students ON (students.teacher_id = teachers.id)
+      WHERE teachers.name ILIKE '%${filter}%' OR
+      teachers.matters ILIKE '%${filter}%'
+      GROUP BY teachers.id
+      ORDER BY total_students DESC
     `, 
       function(err, results){
       if(err) throw `Database error! ${err}`
@@ -107,5 +107,31 @@ module.exports = {
       callback()
     })
   },
+  paginate(params){
+    const { filter, limit, offset, callback } = params
 
+    let query = `
+      SELECT teachers.*, count(students) AS total_students
+      FROM teachers
+      LEFT JOIN students ON (students.teacher_id = teachers.id)
+    `
+
+    if(filter){
+      query = `${query}
+        WHERE teachers.name ILIKE '%${filter}%' OR
+        teachers.matters ILIKE '%${filter}%'
+      `
+    }
+
+    query = `${query}
+      GROUP BY teachers.id LIMIT $1 OFFSET $2
+    `
+
+    db.query(query, [limit, offset], function(err, results){
+      if(err) throw `Database error! ${err}`
+
+      callback(results.rows)
+    })
+
+  }
 }

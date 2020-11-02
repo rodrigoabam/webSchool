@@ -2,7 +2,14 @@
 
 {% block content %}
 <div class="card table-container">
-    <a href="/teachers/create"><img src="../assets/add.svg" alt=""></a>
+    <div class="header">
+        <a href="/teachers/create"><img src="../assets/add.svg" alt="adicionar"></a>
+        <form action="/teachers" method="GET">
+            <input type="text" name="filter">
+            <button type="submit"><img src="../assets/search.svg" alt="pesquisar"></button>
+        </form>
+    </div>
+
     <table width="100%">
         <thead>
             <tr>

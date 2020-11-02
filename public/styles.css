@@ -428,3 +428,36 @@ tbody tr td:last-child a:hover {
     color: var(--color-one);
     background-color: var(--color-three);
 }
+
+/* FILTERS */
+.table-container .header {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.table-container .header a {
+    width: 35px;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 35px;
+    align-items: center;
+}
+
+.table-container .header form input {
+    height: 35px;
+    color: var(--color-four);
+    border-radius: 4px 0 0 4px;
+}
+
+.table-container .header form button {
+    width: 35px;
+    height: 35px;
+    border-left: solid 1px var(--color-four);
+
+    border-radius: 0 4px 4px 0;
+}
